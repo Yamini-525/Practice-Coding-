@@ -1,0 +1,27 @@
+class Solution {
+    public static void sort012(int a[], int n) {
+        int low = 0; // pointer for 0's boundary
+        int high = n - 1; // pointer for 2's boundary
+        int i = 0;
+        
+        while (i <= high) {
+            if (a[i] == 0) {
+                swap(a, i, low);
+                low++;
+                i++;
+            } else if (a[i] == 2) {
+                swap(a, i, high);
+                high--;
+            } else {
+                i++;
+            }
+        }
+    }
+    
+    // Utility function to swap elements in the array
+    private static void swap(int[] a, int i, int j) {
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+}
