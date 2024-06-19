@@ -1,0 +1,28 @@
+import java.util.*;
+class HelloWorld {
+public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+    System.out.println("enter the String");
+    String n=sc.next();
+    int t=n.length();
+    char[] s=n.toCharArray();
+    char[] q=new char[t];
+    int i=0;
+    while(t>0)
+    {
+            q[i]=s[t-1];
+            i++;
+            t--;
+    }
+   boolean result=false;  
+   if(Arrays.equals(s,q))
+   {
+        System.out.println("palindrome");
+   }
+   else
+   {
+        System.out.println(" not a palindrome");
+   }
+  
+}
+}
