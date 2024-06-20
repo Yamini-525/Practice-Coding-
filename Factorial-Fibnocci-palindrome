@@ -10,6 +10,13 @@ public static int fact(int n)
    {
      return n*fact(n-1);
    }
+/*int fact=1;
+        int n=sc.nextInt();
+        for(int i=1;i<=n;i++)// iterative method using the loops
+        {
+            fact=fact*i;
+        }
+        System.out.println(fact);*/
  }
 public static void fib(int n)
 {
