@@ -1,0 +1,39 @@
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+
+class Main {  
+    public static void main (String[] args) {
+       Scanner sc=new Scanner(System.in);
+       int n=sc.nextInt();
+       int[] ar=new int[n];
+       Map<Integer,Integer> m1=new HashMap<>();
+       int xor=0;
+      for(int i=0;i<n;i++)
+      {
+          ar[i]=sc.nextInt();
+          if(m1.containsKey(ar[i]))
+          {
+             int count=m1.get(ar[i]);
+             count=count+1;
+             m1.put(ar[i],count);    
+          }
+          else
+          {
+            m1.put(ar[i],1);
+          }
+          
+      }
+     
+     for(Map.Entry<Integer,Integer> m2:m1.entrySet())
+     {
+          if(m2.getValue()%2!=0)
+          {
+              xor=xor^m2.getKey();
+          }
+     }
+     System.out.println(xor);
+    
+      
+    }
+}
