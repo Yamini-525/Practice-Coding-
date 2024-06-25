@@ -1,0 +1,29 @@
+import java.io.*;
+import java.util.*;
+
+class Main {
+    public static void main (String[] args) {
+        Scanner sc=new Scanner(System.in);
+         int A=sc.nextInt();
+        int B=sc.nextInt();
+        int C=sc.nextInt();
+        int D=sc.nextInt();
+        int E=sc.nextInt();
+        if((A+B)<=D && C<=E)
+        {
+            System.out.println("Yes");
+        }
+        else if((B+C)<=D && A<=E)
+        {
+            System.out.println("Yes");
+        }
+       else  if((A+C)<=D && B<=E)
+        {
+            System.out.println("Yes");
+        }
+        else{
+            System.out.println("No");
+        }
+
+    }
+}
