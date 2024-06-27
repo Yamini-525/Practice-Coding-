@@ -1,0 +1,41 @@
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+    public static void main (String[] args) {
+    Scanner sc=new Scanner(System.in);
+    String s=sc.next();
+    char[] ar=s.toCharArray();
+    Map<Character,Integer> m1=new HashMap<>();
+    for(int i=0;i<ar.length;i++)
+    {
+        
+        if(m1.containsKey(ar[i]))
+        {
+          int count=m1.get(ar[i]);
+         
+          m1.put(ar[i],count+1);
+        }
+        else
+        {
+          m1.put(ar[i],1);
+        }
+        
+    }
+    int cost=0;
+    for(Map.Entry<Character,Integer> m2:m1.entrySet())
+    {
+        int value=m2.getValue();
+      cost+=value;
+      if(value>1)
+      {
+          value=value/2;
+          cost=cost-value;
+      }
+    }
+    System.out.println(cost);
+    
+    }
+}
