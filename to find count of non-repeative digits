@@ -1,0 +1,47 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter the number");
+        List<Integer> li=new ArrayList<>();
+        int total=0;
+        int n=sc.nextInt();
+        while(n>0)
+        {
+            int r=n%10;
+            li.add(r);
+            n=n/10;
+        }
+       Map<Integer,Integer> m1=new HashMap<>();
+        for(int i=0;i<li.size();i++)
+        {
+            if(m1.containsKey(li.get(i)))
+            {
+                int count=m1.get(li.get(i));
+                count=count+1;
+                m1.put(li.get(i),count);
+            }
+            else
+            {
+                m1.put(li.get(i),1);
+            }
+        }
+        int count=1;
+        int maxkey=0;
+        for(Map.Entry<Integer,Integer> m2:m1.entrySet())
+        {
+            int value=m2.getValue();
+            int key=m2.getKey();
+            if(value==count)
+            {
+                maxkey=key;
+                total++;
+                
+            }
+        }
+      System.out.println(total);
+     
+    }
+}
