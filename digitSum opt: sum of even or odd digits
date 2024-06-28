@@ -1,0 +1,38 @@
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        String input2=sc.next();
+        int sum=0;
+        int sum1=0;
+        int c=0;
+        List<Integer>li=new ArrayList<>();
+        while(n>0)
+        {
+            int r=n%10;
+            li.add(r);
+            n=n/10;
+        }
+        for(int i=0;i<li.size();i++)
+      {
+          if(li.get(i)%2==0 || li.get(i)==0)
+          {
+              sum+=li.get(i);
+          }
+          else
+          {
+              sum1+=li.get(i);
+          }
+      }
+      if(input2.equals("even"))
+      {
+          System.out.println(sum);
+      }
+      else
+      {
+         System.out.println(sum1);
+      }
+       
+    }
+}
