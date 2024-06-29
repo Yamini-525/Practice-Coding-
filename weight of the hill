@@ -1,0 +1,25 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter the number of rows");
+        int n=sc.nextInt();
+        int input1=sc.nextInt();
+        int input2=sc.nextInt();
+        int c=0;
+        for(int i=1;i<=n;i++)
+        {
+          for(int j=1;j<=i;j++)
+          {
+              System.out.print(input1+" ");
+              c+=input1;
+          }
+          input1+=input2;
+            System.out.println();
+        }
+        System.out.println(c);
+        
+    }
+}
