@@ -1,0 +1,43 @@
+import java.util.*;
+class HelloWorld {
+   
+        public static void main(String[] args) {
+          Scanner sc=new Scanner(System.in);
+          int input1=sc.nextInt();
+           int input2=sc.nextInt();
+            int input3=sc.nextInt();
+            List<Integer>li=new ArrayList<>();
+            List<Integer>li1=new ArrayList<>();
+              List<Integer>li2=new ArrayList<>();
+          int[] ar={input1,input2,input3};
+            for(int i=0;i<ar.length;i++)
+            {
+                 int r=ar[i]%10;
+                li.add(r);
+                ar[i]=ar[i]/10;
+               int q=ar[i]%10;
+               li1.add(q);
+               ar[i]=ar[i]/10;
+               int s=ar[i]%10;
+               li2.add(s);
+            }
+        //   System.out.println(li);
+        //   System.out.println(li1);
+        //   System.out.println(li2);
+            int p=Collections.min(li);
+            String s1=String.valueOf(p);
+             int u=Collections.min(li1);
+             String s2=String.valueOf(u);
+            int v=Collections.min(li2);
+            String s3=String.valueOf(v);
+            int m1=Collections.max(li);
+             int m2=Collections.max(li1);
+             int m3=Collections.max(li2);
+              int d=(m1>m2)?((m1>m3)?m1:m3):((m2>m3)?m2:m3);
+              String e=String.valueOf(d);
+              String a=e+s3+s2+s1;
+              System.out.println(a);
+          
+        }
+     
+}
