@@ -1,0 +1,50 @@
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt(); 
+        for(int i = 0; i < t; i++) {
+            int n = sc.nextInt(); 
+            ArrayList<Integer> l = new ArrayList<>();
+            for(int j = 0; j < n; j++) {
+                int a = sc.nextInt();
+                l.add(a);
+            }
+            ArrayList<Integer> max = new ArrayList<>();
+            ArrayList<Integer> min = new ArrayList<>();
+            
+            while (l.size() > 1) {
+                int m = Collections.max(l);
+                int mi = Collections.min(l);
+                max.add(m);
+                min.add(mi);
+                l.remove(Integer.valueOf(m));
+                l.remove(Integer.valueOf(mi));
+            }
+
+           
+            if (!l.isEmpty()) {
+                max.add(l.get(0));
+            }
+
+            int xsum = 0;
+            int nsum = 0;
+
+            
+            for (int x : max) {
+                xsum += x;
+            }
+
+            
+            for (int x : min) {
+                nsum += x;
+            }
+
+            System.out.println(xsum - nsum);
+        }
+    }
+}
