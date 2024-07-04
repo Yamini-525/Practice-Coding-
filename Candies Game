@@ -1,0 +1,33 @@
+import java.io.*; 
+import java.util.*; 
+class Main {
+    public static void main (String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int ram=0;
+        int shyam=0;
+         int a=sc.nextInt();
+         int b=sc.nextInt();
+         int i=1;
+         while(i>0)
+         {
+             if(i%2!=0)
+             {
+                 ram+=i;
+                 if(a<ram)
+                 {
+                      System.out.println("Shyam");
+                      break;
+                 }
+             }
+             else
+             {
+                 shyam+=i;
+                  if(b<shyam){
+             System.out.println("Ram");
+             break;
+         }
+             }
+             i++;
+         }
+    }
+}
