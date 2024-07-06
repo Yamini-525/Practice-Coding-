@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int product=1;
+        List<Integer> li=new ArrayList<>();
+        for(int i=0;i<n;i++)
+        {
+            int a=sc.nextInt();
+            li.add(a);
+        }
+        Collections.sort(li);
+        Collections.reverse(li);
+        // System.out.println(li);
+        for(int i=0;i<li.size();i++)
+        {
+            if(i<3)
+            {
+                product*=li.get(i);
+            }
+        }
+        System.out.println(product);
+    }
+}
