@@ -1,0 +1,41 @@
+let inventory = [
+  { name: "carrot", category: "veg", price: 100, quantity: 8 },
+  { name: "egg", category: "nonveg", price: 200, quantity: 6 },
+  { name: "beetroot", category: "veg", price: 90, quantity: 12 },
+  { name: "onion", category: "nonveg", price: 120, quantity: 32 },
+];
+function addItem(name, category, price, quantity) {
+  inventory.push({ name, category, price, quantity });
+}
+addItem("chicken", "nonveg", 160, 8);
+console.log(inventory);
+
+const newdetails = { name: "mango", category: "veg", price: 120, quantity: 32 };
+const updateItem = (name, newdetails) => {
+  const itemfound = inventory.find((item) => {
+    return item.name === name;
+  });
+  if (itemfound) {
+    // itemfound.name = newdetails.name;
+    // itemfound.category = newdetails.category;
+    // itemfound.price = newdetails.price;
+    // itemfound.quantity = newdetails.quantity;
+    Object.assign(itemfound, newdetails);
+  } else {
+    console.log("not found");
+  }
+};
+updateItem("egg", newdetails);
+
+console.log(inventory);
+//to delete
+const deletetobe = inventory.findIndex((item) => item.name === "onion");
+if (deletetobe != -1) {
+  const [deleteitem] = inventory.splice(deletetobe, 1);
+}
+console.log(inventory);
+
+const searchItem = inventory.find((item) => item.name === "mango");
+console.log(searchItem);
+
+console.log(inventory);
