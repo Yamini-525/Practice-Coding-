@@ -1,0 +1,32 @@
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      String s=sc.nextLine();
+      StringTokenizer tokenizer=new StringTokenizer(s," ");
+      while(tokenizer.hasMoreTokens())
+      {
+          String token=tokenizer.nextToken();
+          //System.out.println(token);
+          if(token.equals(token.toUpperCase()))
+          {
+              System.out.print(token+" ");
+          }
+          else
+          {
+              char[] ch=token.toCharArray();
+              if(Character.isLowerCase(ch[0]))
+              {
+                  ch[0]=Character.toUpperCase(ch[0]);
+              }
+              for(int i=1;i<ch.length;i++)
+              {
+                  ch[i]=Character.toLowerCase(ch[i]);
+              }
+              token=new String(ch);
+              System.out.print(token+ " ");
+          }
+      }
+      sc.close();
+    }
+}
