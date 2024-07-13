@@ -1,0 +1,28 @@
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+class Main {
+    public static void main (String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int x=sc.nextInt();
+        List<Integer> li=new ArrayList<>();
+        for(int i=0;i<n;i++)
+        {
+          int p=sc.nextInt();
+          li.add(p);
+        }
+        Collections.sort(li);
+        // System.out.println(li);
+        int q=n-x;
+        int min=li.get(q);
+        for(int j=q;j<n;j++)
+        {
+            if(li.get(j)<min)
+            {
+                min=li.get(j);
+            }
+        }
+        System.out.println(min-1);
+    }
+}
