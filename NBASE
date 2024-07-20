@@ -1,0 +1,31 @@
+import java.lang.*;
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       int n=sc.nextInt();
+       int num=sc.nextInt();
+       String res="";
+       List<Integer>li=new ArrayList<>();
+       int r=0;
+       while(num!=0)
+       {
+           r=num%n;
+           li.add(r);
+           num=num/n;
+       }
+      // System.out.println(li);
+      for(int i=0;i<li.size();i++)
+      {
+          if(li.get(i)>9)
+          {
+               res=(char)(li.get(i)-9+64)+res;
+          }
+          else
+          {
+              res=li.get(i)+res;
+          }
+      }
+      System.out.println(res);
+    }
+}
