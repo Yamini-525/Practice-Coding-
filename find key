@@ -1,0 +1,42 @@
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n1=sc.nextInt();
+        int n2=sc.nextInt();
+        int n3=sc.nextInt();
+        int diff=0;
+        int sum=0;
+        List<Integer> li=new ArrayList<>();
+        List<Integer> li1=new ArrayList<>();
+        List<Integer> li2=new ArrayList<>();
+        int sum1=0;
+        while(n1>0)
+        {
+                 int  r=n1%10;
+                  li.add(r);
+                  n1=n1/10;
+        }
+        while(n2>0)
+        {
+                  int  r=n2%10;
+                  li1.add(r);
+                  n2=n2/10;
+        }
+                
+       while(n3>0)
+        {
+                int  r=n3%10;
+                  li2.add(r);
+                  n3=n3/10;
+        }
+         
+          
+              sum+=Collections.max(li)+Collections.max(li1)+Collections.max(li2);
+              sum1+=Collections.min(li)+Collections.min(li1)+Collections.min(li2);
+        
+      diff=sum+sum1;
+         System.out.println(diff);
+    
+    }
+}
