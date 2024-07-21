@@ -1,0 +1,48 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class HelloWorld {
+    public static boolean isPrime(int r)
+    {
+        boolean valid=true;
+        if(r<=1)
+        {
+            valid=false;
+        }
+        else
+        {
+            for(int i=2;i<=r/2;i++)
+            {
+                if(r%i==0)
+                {
+                    valid=false;
+                }
+               
+            }
+            
+        }
+        return valid;
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int sum=0;
+        List<Integer> li=new ArrayList<>();
+       int n=sc.nextInt();
+       int r=0;
+       int count=0;
+       while(n>0)
+       {
+           r=n%10;
+           li.add(r);
+           n=n/10;
+       }
+       for(int i=0;i<li.size();i++)
+       {
+           if(isPrime(li.get(i)))
+           {
+               count++;
+           }
+       }
+        System.out.println(count);
+    }
+}
