@@ -1,0 +1,53 @@
+import java.util.*;
+class HelloWorld {
+    public static boolean isprime(int n)
+    {
+        boolean valid=true;
+        if(n<2)
+        {
+            valid=false;
+        }
+        for(int i=2;i<=n/2;i++)
+        {
+            if(n%i==0)
+            {
+                valid=false;
+            }
+            
+        }
+        return valid;
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+       String s=sc.next();
+       List<Character> li=new ArrayList<>();
+       String res="";
+       char[] ar=s.toCharArray();
+       int sum=0;
+       int sum1=0;
+       for(int i=0;i<ar.length;i++)
+       {
+           int x=(int)ar[i];
+           if(isprime(x))
+           {
+               res=res+ar[i];
+               sum+=x;
+                 li.add(ar[i]);
+           }
+           else
+           {
+               sum1+=x;
+           }
+           
+       }
+       if(li.size()==0)
+       {
+           System.out.println(sum1);
+       }
+       else
+       {
+             System.out.println(res+":"+sum);
+       }
+     
+        }
+    }
