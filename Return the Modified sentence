@@ -1,0 +1,20 @@
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        StringTokenizer token=new StringTokenizer(s," ");
+        while(token.hasMoreTokens())
+        {
+            String res="";
+           String tokens=token.nextToken();
+           for(int i=0;i<tokens.length();i++)
+           {
+               int x=(int)(tokens.charAt(i))+tokens.length();
+               char se=(char)(x);
+               res=res+se;
+           }
+           System.out.print(res+" ");
+        }
+    }
+}
