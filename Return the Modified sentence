@@ -10,9 +10,26 @@ class HelloWorld {
            String tokens=token.nextToken();
            for(int i=0;i<tokens.length();i++)
            {
+               char se='\0';
                int x=(int)(tokens.charAt(i))+tokens.length();
-               char se=(char)(x);
-               res=res+se;
+               if(x>90)
+               {
+                  se='Z'; 
+               }
+               else
+               {
+                   se=(char)(x); 
+               }
+               if(x>122)
+               {
+                   se='z';
+               }
+               else
+               {
+                   se=(char)(x);
+               }
+                res=res+se;
+              
            }
            System.out.print(res+" ");
         }
