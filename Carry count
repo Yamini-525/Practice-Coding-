@@ -1,0 +1,49 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main 
+{
+    public static int numberOfCarries (int num1, int num2) 
+    {
+        List<Integer> li=new ArrayList<>();
+        List<Integer> li1=new ArrayList<>();
+        int sum=0;
+        int count=0;
+        int z=0;
+       while(num1>0)
+       {
+           int r=num1%10;
+           li.add(r);
+           num1=num1/10;
+       }
+       while(num2>0)
+       {
+           int q=num2%10;
+           li1.add(q);
+           num2=num2/10;
+       }
+       for(int i=0;i<li.size();i++)
+       {
+           for(int j=i;j<li1.size();j++)
+           {
+               z=li.get(i)+li1.get(j)+sum;
+               if(z>9)
+               {
+                   count++;
+                  
+               }
+                sum=z/10;
+                break;
+           }
+       }
+       return count;
+       
+    }
+    public static void main (String[]args) 
+    {
+        Scanner sc = new Scanner (System.in);
+        int num1 = sc.nextInt ();
+        int num2 = sc.nextInt ();
+System.out.println (numberOfCarries (num1, num2));
+}
+}
