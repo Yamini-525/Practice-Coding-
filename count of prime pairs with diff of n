@@ -1,0 +1,63 @@
+import java.util.*;
+class Main{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int count=0;
+        int diff=0;
+        List<Integer> li=new ArrayList<>(); 
+        for(int i=a;i<=b;i++)
+        {
+            if(isPrime(i))
+            {
+                li.add(i);
+            }
+        }
+        
+        for(int h=0;h<li.size();h++)
+        {
+            for(int p=h+1;p<li.size();p++)
+            {
+                diff=li.get(h)-li.get(p);
+                if(Math.abs(diff)==6)
+                {
+                    count++;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+        }
+     if(count>0)
+     {
+         System.out.println(count);
+     }
+     else
+     {
+         System.out.println("No Prime Pairs");
+     }
+        
+    }
+    public static boolean isPrime(int N)
+    {
+        Boolean bool=true;
+        for(int j=2;j<=N/2;j++)
+        {
+            if(N%j!=0)
+            {
+                bool=true;
+            }
+            else
+            {
+                bool=false;
+                break;
+            }
+           
+        }
+        return bool;
+        
+    }
+}
