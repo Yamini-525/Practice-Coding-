@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*; 
+
+class Main {
+    public static void main (String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        for(int j=0;j<n;j++)
+        {
+            int count=0;
+          int tot=0;
+           int a=sc.nextInt();
+           int b=sc.nextInt();
+           int c=sc.nextInt();
+           for(int i=1;i<=a;i++)
+           {
+               tot+=b;
+               if(tot>c)
+               {
+                  count++; 
+               }
+               
+           }
+          System.out.println(count);
+        }
+    }
+}
