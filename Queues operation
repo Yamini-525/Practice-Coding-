@@ -1,3 +1,4 @@
+////////////////////////////////////////////////using arrays////////////////////////////////////////////
 import java.util.*;
 public class Queue {
     static int rear = 0;
@@ -49,3 +50,84 @@ public class Queue {
         printQueue(); 
     }
 }
+
+
+
+
+
+
+////////////////////////////using linked listss/////////////////////////
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class ListNode {
+    int data;
+    ListNode next;
+    public ListNode(int data)
+    {
+        this.data=data;
+        this.next=null;
+    }
+}
+    class Queue{
+       ListNode front;
+        ListNode rear;
+        void enqueue(int data)
+        {
+            ListNode newnode=new ListNode(data);
+            
+                if(rear==null)
+                {
+                    front=rear=newnode;
+                }
+                else
+                {
+                  
+                    rear.next=newnode;
+                    rear=newnode;
+                }
+            
+        }
+        void dequeue()
+        {
+            if(front==rear)
+            {
+                System.out.println("queue is empty");
+            }
+            else
+            {
+                ListNode temp=front;
+                if(front==null)
+                {
+                   rear=null;
+                }
+                front=front.next;
+                temp.next=null;
+                
+            }
+            
+        }
+        void display()
+        {
+            ListNode current=front;
+            while(current!=null)
+            {
+                System.out.println(current.data+" ");
+                current=current.next;
+            }
+        }
+    }
+
+    public class Main{
+    public static void main(String[] args) {
+      Queue q1=new Queue();
+      q1.enqueue(10);
+      q1.enqueue(20);
+      q1.enqueue(30);
+      q1.enqueue(40);
+      q1.display();
+      q1.dequeue();
+      q1.display();
+      
+    }
+    }
