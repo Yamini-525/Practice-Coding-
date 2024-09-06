@@ -1,0 +1,51 @@
+import java.util.*;
+public class Queue {
+    static int rear = 0;
+    static int front = 0;
+    static int n = 10; 
+    static int queue[] = new int[n];
+    
+    public static void enqueue(int data) {
+        if(rear == n-1) 
+        {  
+            System.out.println("Overflow condition");
+        } else {
+            queue[rear] = data;
+            rear++;
+        }
+    }
+    
+    public static void dequeue() {
+        if(front == rear) {
+            System.out.println("Queue is empty");
+        } else {
+            System.out.println("Dequeued: " + queue[front++]);
+            if(front == rear) {
+                front = 0;
+                rear = 0;
+            }
+        }
+    }
+ 
+    public static void printQueue() {
+        if (front == rear) {
+            System.out.println("Queue is empty");
+        } else {
+            System.out.print("Queue elements: ");
+            for (int i = front; i < rear; i++) {
+                System.out.print(queue[i] + " ");
+            }
+            System.out.println();
+        }
+    }
+    
+    public static void main(String args[]) {
+        enqueue(10);
+        enqueue(20);
+        enqueue(30);
+        enqueue(40);
+        printQueue();
+        dequeue();
+        printQueue(); 
+    }
+}
